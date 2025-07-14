@@ -23,11 +23,7 @@ const Navigation = () => {
             to="/"
             className="flex items-center space-x-3 font-bold text-xl"
           >
-            <img
-              src="/src/assets/mile).png"
-              alt="MMAC Logo"
-              className="h-10 w-10"
-            />
+            <img src="/mile).png" alt="MMAC Logo" className="h-10 w-10" />
             <span className="text-foreground">
               <span className="text-primary">Mile</span>Master Auto Care
             </span>
