@@ -17,7 +17,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['(555) 123-4567', 'Call for immediate assistance'],
+      details: ['0769882914', 'Call for immediate assistance'],
       action: 'Call Now',
     },
     {
