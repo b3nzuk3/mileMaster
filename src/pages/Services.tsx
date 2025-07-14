@@ -1,0 +1,205 @@
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { NavLink } from 'react-router-dom'
+import {
+  Car,
+  Gauge,
+  Cog,
+  Wrench,
+  Zap,
+  Shield,
+  Thermometer,
+  Battery,
+  ArrowRight,
+} from 'lucide-react'
+
+const Services = () => {
+  const services = [
+    {
+      icon: Car,
+      name: 'Engine Diagnostics',
+      description:
+        'Comprehensive computer diagnostics to identify engine issues quickly and accurately.',
+      features: [
+        'OBD-II scanning',
+        'Performance testing',
+        'Error code analysis',
+        'Detailed reporting',
+      ],
+    },
+    {
+      icon: Gauge,
+      name: 'Brake Service',
+      description:
+        'Complete brake system inspection, repair, and replacement for optimal safety.',
+      features: [
+        'Brake pad replacement',
+        'Rotor resurfacing',
+        'Fluid flush',
+        'Safety inspection',
+      ],
+    },
+    {
+      icon: Cog,
+      name: 'Oil Change & Maintenance',
+      description:
+        'Regular maintenance services to keep your vehicle running smoothly.',
+      features: [
+        'Full synthetic oil',
+        'Filter replacement',
+        'Multi-point inspection',
+        'Fluid top-off',
+      ],
+    },
+    {
+      icon: Wrench,
+      name: 'Suspension Services',
+      description:
+        'Expert suspension inspection, repair, and upgrades for a smoother, safer ride.',
+      features: [
+        'Shock and strut replacement',
+        'Suspension check',
+        'Bushing and joint service',
+        'Ride height adjustment',
+      ],
+    },
+    {
+      icon: Zap,
+      name: 'Electrical Systems',
+      description:
+        'Expert diagnosis and repair of all electrical components and systems.',
+      features: [
+        'Battery testing',
+        'Alternator service',
+        'Starter repair',
+        'Wiring diagnostics',
+      ],
+    },
+    {
+      icon: Shield,
+      name: 'Transmission Service',
+      description:
+        'Professional transmission maintenance and repair for all vehicle types.',
+      features: [
+        'Fluid change',
+        'Filter replacement',
+        'Diagnostic testing',
+        'Rebuild services',
+      ],
+    },
+    {
+      icon: Thermometer,
+      name: 'Cooling System',
+      description:
+        'Keep your engine cool with our comprehensive cooling system services.',
+      features: [
+        'Radiator service',
+        'Coolant flush',
+        'Thermostat replacement',
+        'Leak detection',
+      ],
+    },
+    {
+      icon: Battery,
+      name: 'Battery & Charging',
+      description:
+        'Complete battery and charging system testing and replacement services.',
+      features: [
+        'Battery testing',
+        'Installation',
+        'Charging system check',
+        'Warranty coverage',
+      ],
+    },
+  ]
+
+  return (
+    <div className="min-h-screen pt-20">
+      {/* Header Section */}
+      <section className="py-20 bg-gradient-dark text-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-5xl font-bold mb-6">Our Services</h1>
+          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+            Comprehensive automotive services from routine maintenance to
+            complex repairs. Our certified technicians use state-of-the-art
+            equipment to keep your vehicle running perfectly.
+          </p>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-automotive transition-all duration-300 hover:scale-105 border-border"
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-6">
+                    <div className="bg-gradient-hero p-4 rounded-lg shadow-automotive flex-shrink-0">
+                      <service.icon className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-3">
+                        {service.name}
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        {service.description}
+                      </p>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, featureIndex) => (
+                          <li
+                            key={featureIndex}
+                            className="flex items-center text-sm text-muted-foreground"
+                          >
+                            <ArrowRight className="h-4 w-4 text-primary mr-2" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-muted">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
+            Need Service? We're Here to Help
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Don't see the service you need? Contact us - we handle all types of
+            automotive repairs and maintenance.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              variant="hero"
+              size="lg"
+              className="text-lg px-8 py-4"
+              asChild
+            >
+              <NavLink to="/booking">Book Service</NavLink>
+            </Button>
+            <Button
+              variant="automotive"
+              size="lg"
+              className="text-lg px-8 py-4"
+              asChild
+            >
+              <NavLink to="/contact">Contact Us</NavLink>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default Services
