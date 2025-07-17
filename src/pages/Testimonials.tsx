@@ -6,10 +6,14 @@ import { Star, Quote } from 'lucide-react'
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([])
+  const [averageRating, setAverageRating] = useState(5)
   useEffect(() => {
     fetch('/api/google-reviews')
       .then((res) => res.json())
-      .then((data) => setReviews(data.reviews || []))
+      .then((data) => {
+        setReviews(data.reviews || [])
+        setAverageRating(data.rating || 5)
+      })
   }, [])
 
   const renderStars = (rating) => {
@@ -40,7 +44,7 @@ const Testimonials = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, index) => (
+            {reviews.slice(0, 9).map((review, index) => (
               <Card
                 key={index}
                 className="hover:shadow-automotive transition-all duration-300 hover:scale-105 relative"
@@ -88,8 +92,12 @@ const Testimonials = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">5.0</div>
-              <div className="flex justify-center mb-2">{renderStars(5)}</div>
+              <div className="text-4xl font-bold text-primary mb-2">
+                {averageRating.toFixed(1)}
+              </div>
+              <div className="flex justify-center mb-2">
+                {renderStars(Math.round(averageRating))}
+              </div>
               <p className="text-muted-foreground">Average Rating</p>
             </div>
             <div>
