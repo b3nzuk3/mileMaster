@@ -11,7 +11,12 @@ const Testimonials = () => {
     fetch('/api/google-reviews')
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data.reviews || [])
+        let reviews = data.reviews || []
+        // Sort by time (latest first) if time property exists
+        if (reviews.length && reviews[0].time) {
+          reviews = reviews.slice().sort((a, b) => b.time - a.time)
+        }
+        setReviews(reviews)
         setAverageRating(data.rating || 5)
       })
   }, [])
