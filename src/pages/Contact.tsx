@@ -5,6 +5,9 @@ import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { NavLink } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, Calendar, Car, Send } from 'lucide-react'
+import { useState } from 'react'
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeozoqdb'
 
 const Contact = () => {
   const contactInfo = [
@@ -13,18 +16,22 @@ const Contact = () => {
       title: 'Address',
       details: ['MILEMASTER AUTO CARE LTD', 'Thika Rd, Nairobi'],
       action: 'Get Directions',
+      actionLink:
+        'https://www.google.com/maps/place/MILEMASTER+AUTO+CARE+LTD,+Thika+Rd,+Nairobi',
     },
     {
       icon: Phone,
       title: 'Phone',
       details: ['0769882914', 'Call for immediate assistance'],
       action: 'Call Now',
+      actionLink: 'tel:0769882914',
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@milemasterauto.com', 'General inquiries'],
+      details: ['milemasterac@gmail.com', 'General inquiries'],
       action: 'Send Email',
+      actionLink: 'mailto:milemasterac@gmail.com',
     },
   ]
 
@@ -33,6 +40,39 @@ const Contact = () => {
     { day: 'Saturday', time: '8:00 AM - 4:00 PM' },
     { day: 'Sunday', time: 'Closed' },
   ]
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleInputChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const payload = { ...formData }
+    const formDataObj = new FormData()
+    Object.entries(payload).forEach(([key, value]) => {
+      formDataObj.append(key, value)
+    })
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: formDataObj,
+      headers: { Accept: 'application/json' },
+    })
+    if (response.ok) {
+      setIsSubmitted(true)
+    } else {
+      alert('There was an error submitting the form. Please try again.')
+    }
+  }
 
   return (
     <div className="min-h-screen pt-20">
@@ -82,8 +122,15 @@ const Contact = () => {
                           <Button
                             variant="link"
                             className="p-0 h-auto text-primary font-semibold"
+                            asChild
                           >
-                            {contact.action}
+                            <a
+                              href={contact.actionLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {contact.action}
+                            </a>
                           </Button>
                         </div>
                       </div>
@@ -134,7 +181,7 @@ const Contact = () => {
               </h2>
               <Card className="shadow-automotive">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <Label
@@ -143,7 +190,16 @@ const Contact = () => {
                         >
                           First Name
                         </Label>
-                        <Input id="firstName" className="mt-2" />
+                        <Input
+                          id="firstName"
+                          name="firstName"
+                          className="mt-2"
+                          value={formData.firstName}
+                          onChange={(e) =>
+                            handleInputChange('firstName', e.target.value)
+                          }
+                          required
+                        />
                       </div>
                       <div>
                         <Label
@@ -152,10 +208,18 @@ const Contact = () => {
                         >
                           Last Name
                         </Label>
-                        <Input id="lastName" className="mt-2" />
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          className="mt-2"
+                          value={formData.lastName}
+                          onChange={(e) =>
+                            handleInputChange('lastName', e.target.value)
+                          }
+                          required
+                        />
                       </div>
                     </div>
-
                     <div>
                       <Label
                         htmlFor="email"
@@ -163,9 +227,18 @@ const Contact = () => {
                       >
                         Email
                       </Label>
-                      <Input id="email" type="email" className="mt-2" />
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        className="mt-2"
+                        value={formData.email}
+                        onChange={(e) =>
+                          handleInputChange('email', e.target.value)
+                        }
+                        required
+                      />
                     </div>
-
                     <div>
                       <Label
                         htmlFor="phone"
@@ -173,9 +246,18 @@ const Contact = () => {
                       >
                         Phone
                       </Label>
-                      <Input id="phone" type="tel" className="mt-2" />
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        className="mt-2"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          handleInputChange('phone', e.target.value)
+                        }
+                        required
+                      />
                     </div>
-
                     <div>
                       <Label
                         htmlFor="subject"
@@ -183,9 +265,17 @@ const Contact = () => {
                       >
                         Subject
                       </Label>
-                      <Input id="subject" className="mt-2" />
+                      <Input
+                        id="subject"
+                        name="subject"
+                        className="mt-2"
+                        value={formData.subject}
+                        onChange={(e) =>
+                          handleInputChange('subject', e.target.value)
+                        }
+                        required
+                      />
                     </div>
-
                     <div>
                       <Label
                         htmlFor="message"
@@ -195,17 +285,27 @@ const Contact = () => {
                       </Label>
                       <Textarea
                         id="message"
+                        name="message"
                         rows={6}
                         className="mt-2"
                         placeholder="Tell us about your vehicle or service needs..."
+                        value={formData.message}
+                        onChange={(e) =>
+                          handleInputChange('message', e.target.value)
+                        }
+                        required
                       />
                     </div>
-
                     <Button type="submit" variant="hero" className="w-full">
                       <Send className="mr-2 h-4 w-4" />
                       Send Message
                     </Button>
                   </form>
+                  {isSubmitted && (
+                    <div className="mt-6 text-center text-green-600 font-bold">
+                      Thank you for contacting us! We will get back to you soon.
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </div>
