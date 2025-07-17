@@ -198,14 +198,14 @@ const Home = () => {
 
       {/* Google Reviews Section - Full Width */}
       {reviews.length > 0 && (
-        <section className="py-20 bg-muted w-full">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-muted w-full overflow-x-hidden">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-8 text-left border-b pb-2">
               WHAT CLIENTS ARE SAYING ABOUT MILEMASTER AUTO CARE
             </h2>
-            <div className="flex flex-col md:flex-row gap-8 items-stretch">
+            <div className="flex flex-col md:flex-row gap-8 items-stretch w-full">
               {/* Left Card: Business Info */}
-              <div className="flex flex-col items-center justify-center bg-background rounded-xl shadow-automotive p-8 min-w-[300px] max-w-xs mx-auto md:mx-0">
+              <div className="flex flex-col items-center justify-center bg-background rounded-xl shadow-automotive p-8 min-w-[260px] max-w-xs mx-auto md:mx-0 w-full">
                 <img src={googleLogo} alt="Google" className="w-10 h-10 mb-2" />
                 <div className="font-bold text-lg mb-1">
                   MileMaster Auto Care
@@ -243,13 +243,13 @@ const Home = () => {
                 </a>
               </div>
               {/* Right: Carousel of Reviews */}
-              <div className="flex-1 flex flex-col justify-center">
-                <Carousel className="relative">
-                  <CarouselContent>
+              <div className="flex-1 flex flex-col justify-center w-full">
+                <Carousel className="relative w-full max-w-full overflow-x-hidden">
+                  <CarouselContent className="w-full max-w-full">
                     {reviews.slice(0, 5).map((review, idx) => (
-                      <CarouselItem key={idx} className="p-4">
-                        <Card className="shadow-automotive h-full flex flex-col justify-between">
-                          <CardContent className="p-6 flex flex-col h-full">
+                      <CarouselItem key={idx} className="p-4 w-full max-w-full">
+                        <Card className="shadow-automotive h-full flex flex-col justify-between w-full max-w-full">
+                          <CardContent className="p-6 flex flex-col h-full w-full max-w-full">
                             <div className="flex items-center gap-2 mb-2">
                               {review.profile_photo_url ? (
                                 <img
