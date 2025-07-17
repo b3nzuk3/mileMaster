@@ -65,11 +65,13 @@ const Home = () => {
   ]
 
   const [reviews, setReviews] = useState([])
+  const [averageRating, setAverageRating] = useState(5)
   useEffect(() => {
     fetch('/api/google-reviews')
       .then((res) => res.json())
       .then((data) => {
         setReviews(data.reviews || [])
+        setAverageRating(data.rating || 5)
         console.log('Google Reviews:', data.reviews)
       })
   }, [])
@@ -210,17 +212,15 @@ const Home = () => {
                 </div>
                 <div className="flex items-center mb-1">
                   <span className="text-2xl font-bold mr-2">
-                    {(reviews[0]?.rating || 5).toFixed(1)}
+                    {averageRating.toFixed(1)}
                   </span>
-                  {[...Array(Math.floor(reviews[0]?.rating || 5))].map(
-                    (_, i) => (
-                      <Star
-                        key={i}
-                        className="h-5 w-5 text-primary fill-current"
-                      />
-                    )
-                  )}
-                  {(reviews[0]?.rating || 5) % 1 !== 0 && (
+                  {[...Array(Math.floor(averageRating))].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-5 w-5 text-primary fill-current"
+                    />
+                  ))}
+                  {averageRating % 1 !== 0 && (
                     <Star className="h-5 w-5 text-primary fill-none" />
                   )}
                 </div>
