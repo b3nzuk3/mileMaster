@@ -6,46 +6,60 @@ import { Star, Quote } from 'lucide-react'
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Amina Mwangi',
-      location: 'Westlands',
-      rating: 5,
-      text: 'Absolutely incredible service! The team at MileMaster diagnosed my transmission issue quickly and fixed it for a fraction of what the dealership quoted. Honest, reliable, and skilled technicians.',
-      service: 'Transmission Repair',
+      name: 'Edith Nyambura',
+      reviewsCount: 2,
+      time: '5 months ago',
+      text: 'Great service and a place you can rely on if stuck anywhere on the road for them to come to your rescue. I highly recommend them for your Auto clinic services.',
+      hearts: 1,
     },
     {
-      name: 'Brian Otieno',
-      location: 'Kasarani',
-      rating: 5,
-      text: "I've been bringing my fleet of work trucks here for 3 years. Mike and his team always deliver quality work on time and within budget. They've saved my business thousands in downtime.",
-      service: 'Fleet Maintenance',
+      name: 'Michael D. Opembe',
+      reviewsCount: 3,
+      time: '2 months ago',
+      text: 'Great workmanship from the team at Milemaster Auto care Ltd 👏🏽 👌🏽',
+      hearts: 0,
     },
     {
-      name: 'Faith Wanjiru',
-      location: 'Lavington',
-      rating: 5,
-      text: "As a single mom, I need a mechanic I can trust. MileMaster explains everything clearly, provides fair pricing, and never tries to sell me services I don't need. Highly recommend!",
-      service: 'General Maintenance',
+      name: 'Joseph Muendo',
+      reviewsCount: 4,
+      time: '4 months ago',
+      text: 'Best in town so far',
+      hearts: 0,
     },
     {
-      name: 'Robert Njoroge',
-      location: 'Runda',
-      rating: 5,
-      text: 'Brought my BMW here after a bad experience elsewhere. These guys know European cars inside and out. Professional service, clean facility, and competitive pricing.',
-      service: 'European Vehicle Service',
+      name: 'Eckra Wangui',
+      reviewsCount: 9,
+      time: '5 months ago',
+      text: 'They are the best at what they do!',
+      hearts: 1,
     },
     {
-      name: 'Maria Achieng',
-      location: 'South C',
-      rating: 5,
-      text: 'Emergency brake failure on a Friday evening - MileMaster stayed late to get my car safe and roadworthy. Above and beyond customer service when I needed it most.',
-      service: 'Emergency Brake Repair',
+      name: 'Whitney Naliaka',
+      reviewsCount: 3,
+      time: '5 months ago',
+      text: 'Best services ever😊',
+      hearts: 2,
     },
     {
-      name: 'David Kamau',
-      location: 'Parklands',
-      rating: 5,
-      text: "I'm a car enthusiast and very picky about who works on my vehicles. MileMaster treats every car like it's their own. Attention to detail and craftsmanship is outstanding.",
-      service: 'Performance Tuning',
+      name: 'Doreen murungi',
+      reviewsCount: 1,
+      time: '5 months ago',
+      text: 'Perfect experience good service..',
+      hearts: 2,
+    },
+    {
+      name: 'JOSEPH GICHARU',
+      reviewsCount: 1,
+      time: 'Edited a day ago',
+      text: "It's a 1 stop shop",
+      hearts: 2,
+    },
+    {
+      name: 'Rose Gicharu',
+      reviewsCount: 1,
+      time: '5 months ago',
+      text: 'Very clean work',
+      hearts: 0,
     },
   ]
 
@@ -88,23 +102,30 @@ const Testimonials = () => {
                   </div>
 
                   <div className="flex items-center mb-4 mt-4">
-                    {renderStars(testimonial.rating)}
+                    {renderStars(5)}
                   </div>
 
                   <p className="text-muted-foreground mb-6 italic leading-relaxed">
                     "{testimonial.text}"
                   </p>
 
-                  <div className="border-t border-border pt-4">
+                  <div className="border-t border-border pt-4 flex flex-col gap-1">
                     <h4 className="font-bold text-foreground text-lg">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {testimonial.location}
-                    </p>
-                    <p className="text-sm text-primary font-semibold">
-                      {testimonial.service}
-                    </p>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>
+                        {testimonial.reviewsCount} review
+                        {testimonial.reviewsCount > 1 ? 's' : ''}
+                      </span>
+                      <span>·</span>
+                      <span>{testimonial.time}</span>
+                      {testimonial.hearts > 0 && (
+                        <span className="flex items-center gap-1 ml-2 text-red-500">
+                          {'❤️'.repeat(testimonial.hearts)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
