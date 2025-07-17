@@ -1,69 +1,18 @@
+import { useEffect, useState } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router-dom'
 import { Star, Quote } from 'lucide-react'
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: 'Edith Nyambura',
-      reviewsCount: 2,
-      time: '5 months ago',
-      text: 'Great service and a place you can rely on if stuck anywhere on the road for them to come to your rescue. I highly recommend them for your Auto clinic services.',
-      hearts: 1,
-    },
-    {
-      name: 'Michael D. Opembe',
-      reviewsCount: 3,
-      time: '2 months ago',
-      text: 'Great workmanship from the team at Milemaster Auto care Ltd 👏🏽 👌🏽',
-      hearts: 0,
-    },
-    {
-      name: 'Joseph Muendo',
-      reviewsCount: 4,
-      time: '4 months ago',
-      text: 'Best in town so far',
-      hearts: 0,
-    },
-    {
-      name: 'Eckra Wangui',
-      reviewsCount: 9,
-      time: '5 months ago',
-      text: 'They are the best at what they do!',
-      hearts: 1,
-    },
-    {
-      name: 'Whitney Naliaka',
-      reviewsCount: 3,
-      time: '5 months ago',
-      text: 'Best services ever😊',
-      hearts: 2,
-    },
-    {
-      name: 'Doreen murungi',
-      reviewsCount: 1,
-      time: '5 months ago',
-      text: 'Perfect experience good service..',
-      hearts: 2,
-    },
-    {
-      name: 'JOSEPH GICHARU',
-      reviewsCount: 1,
-      time: 'Edited a day ago',
-      text: "It's a 1 stop shop",
-      hearts: 2,
-    },
-    {
-      name: 'Rose Gicharu',
-      reviewsCount: 1,
-      time: '5 months ago',
-      text: 'Very clean work',
-      hearts: 0,
-    },
-  ]
+  const [reviews, setReviews] = useState([])
+  useEffect(() => {
+    fetch('/api/google-reviews')
+      .then((res) => res.json())
+      .then((data) => setReviews(data.reviews || []))
+  }, [])
 
-  const renderStars = (rating: number) => {
+  const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
@@ -91,7 +40,7 @@ const Testimonials = () => {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {reviews.map((review, index) => (
               <Card
                 key={index}
                 className="hover:shadow-automotive transition-all duration-300 hover:scale-105 relative"
@@ -100,31 +49,31 @@ const Testimonials = () => {
                   <div className="absolute -top-3 -left-3 bg-gradient-hero p-3 rounded-full shadow-automotive">
                     <Quote className="h-6 w-6 text-primary-foreground" />
                   </div>
-
                   <div className="flex items-center mb-4 mt-4">
-                    {renderStars(5)}
+                    {renderStars(review.rating)}
                   </div>
-
                   <p className="text-muted-foreground mb-6 italic leading-relaxed">
-                    "{testimonial.text}"
+                    "{review.text}"
                   </p>
-
                   <div className="border-t border-border pt-4 flex flex-col gap-1">
-                    <h4 className="font-bold text-foreground text-lg">
-                      {testimonial.name}
-                    </h4>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span>
-                        {testimonial.reviewsCount} review
-                        {testimonial.reviewsCount > 1 ? 's' : ''}
-                      </span>
-                      <span>·</span>
-                      <span>{testimonial.time}</span>
-                      {testimonial.hearts > 0 && (
-                        <span className="flex items-center gap-1 ml-2 text-red-500">
-                          {'❤️'.repeat(testimonial.hearts)}
-                        </span>
+                    <div className="flex items-center gap-2 mb-2">
+                      {review.profile_photo_url ? (
+                        <img
+                          src={review.profile_photo_url}
+                          alt={review.author_name}
+                          className="w-8 h-8 rounded-full border"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-full border bg-muted flex items-center justify-center text-base font-bold text-primary">
+                          {review.author_name ? review.author_name[0] : '?'}
+                        </div>
                       )}
+                      <h4 className="font-bold text-foreground text-lg">
+                        {review.author_name}
+                      </h4>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span>{review.relative_time_description}</span>
                     </div>
                   </div>
                 </CardContent>
