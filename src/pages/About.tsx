@@ -30,6 +30,40 @@ const About = () => {
       experience: '10 years',
       specialties: ['Brake Systems', 'Suspension', 'Safety Inspections'],
     },
+    // New team members with images
+    {
+      name: 'MOSES INGOSI',
+      role: 'WORKSHOP MANAGER',
+      experience: '6 years',
+      image:
+        'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211371/mileMaster/4_ykutqd.png',
+      specialties: [
+        'Engine diagnosis',
+        'Braking System',
+        'Suspension',
+        'Customer Services',
+      ],
+    },
+    {
+      name: 'CALISTINE CLENCH',
+      experience: '4 years',
+      image:
+        'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211384/mileMaster/3_nwgexo.png',
+      specialties: ['Braking system', 'Suspension'],
+    },
+    {
+      name: 'JOSHUA ONYANGO',
+      experience: '9 years',
+      image:
+        'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211388/mileMaster/6_rn3sfz.png',
+      specialties: [
+        'Engine diagnosis',
+        'Suspension',
+        'Transmission',
+        'Braking System',
+        'Hybrid Car Service',
+      ],
+    },
   ]
 
   return (
@@ -158,15 +192,25 @@ const About = () => {
                 className="hover:shadow-automotive transition-all duration-300"
               >
                 <CardContent className="p-8 text-center">
-                  <div className="w-20 h-20 bg-gradient-hero rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <Users className="h-10 w-10 text-primary-foreground" />
-                  </div>
+                  {member.image ? (
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-20 h-20 object-cover rounded-full mx-auto mb-6 border-4 border-primary/30 shadow"
+                    />
+                  ) : (
+                    <div className="w-20 h-20 bg-gradient-hero rounded-full mx-auto mb-6 flex items-center justify-center">
+                      <Users className="h-10 w-10 text-primary-foreground" />
+                    </div>
+                  )}
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {member.name}
                   </h3>
-                  <p className="text-primary font-semibold mb-2">
-                    {member.role}
-                  </p>
+                  {member.role && (
+                    <p className="text-primary font-semibold mb-2">
+                      {member.role}
+                    </p>
+                  )}
                   <p className="text-muted-foreground mb-4">
                     {member.experience} experience
                   </p>
