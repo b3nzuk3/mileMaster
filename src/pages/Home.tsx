@@ -248,7 +248,7 @@ const Home = () => {
                   <span className="font-semibold text-google">Google</span>
                 </div>
                 <a
-                  href="https://www.google.com/maps/place/?q=place_id:ChIJ-7kTwLqh7gYRgkOahFrlqMs"
+                  href="https://search.google.com/local/writereview?placeid=ChIJ-7kTwLqh7gYRgkOahFrlqMs"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded px-4 py-2 text-sm mt-2 transition"
