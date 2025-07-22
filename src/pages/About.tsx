@@ -59,7 +59,7 @@ const About = () => {
                 About MileMaster Auto Care
               </h1>
               <p className="text-xl opacity-90 mb-8">
-                For over 15 years, MileMaster Auto Care has been the trusted
+                For over 2 years, MileMaster Auto Care has been the trusted
                 choice for automotive service in our community. We combine
                 traditional craftsmanship with cutting-edge technology to
                 deliver exceptional results.
@@ -169,7 +169,7 @@ const About = () => {
             {/* Crispin Lughano */}
             <div className="flex flex-col items-center text-center">
               <img
-                src="/founder-crispin.jpg"
+                src="https://res.cloudinary.com/dq3jxutxg/image/upload/v1753212726/mileMaster/1_h0dcrd.png"
                 alt="Crispin Lughano"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-primary/30 shadow"
               />
@@ -192,7 +192,7 @@ const About = () => {
             {/* Joseph Mwaura */}
             <div className="flex flex-col items-center text-center">
               <img
-                src="/founder-joseph.jpg"
+                src="https://res.cloudinary.com/dq3jxutxg/image/upload/v1753212730/mileMaster/2_xm5wv1.png"
                 alt="Joseph Mwaura"
                 className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-primary/30 shadow"
               />
