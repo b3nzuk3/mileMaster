@@ -159,8 +159,14 @@ const Testimonials = () => {
           <p className="text-xl opacity-90 mb-6">
             We'd love to hear about your experience with MileMaster Auto Care
           </p>
-          <Button variant="hero" size="lg">
-            Leave a Review
+          <Button variant="hero" size="lg" asChild>
+            <a
+              href="https://search.google.com/local/writereview?placeid=ChIJ-7kTwLqh7gYRgkOahFrlqMs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leave a Review
+            </a>
           </Button>
         </div>
       </section>

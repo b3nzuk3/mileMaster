@@ -101,13 +101,14 @@ const Services = () => {
     },
     {
       icon: Battery,
-      name: 'Battery & Charging',
+      name: 'Hybrid Battery Services',
       description:
-        'Complete battery and charging system testing and replacement services.',
+        'Specialized hybrid battery diagnostics, maintenance, and replacement for hybrid vehicles.',
       features: [
-        'Battery testing',
-        'Installation',
-        'Charging system check',
+        'Hybrid battery health check',
+        'Battery reconditioning',
+        'Hybrid battery replacement',
+        'System diagnostics',
         'Warranty coverage',
       ],
     },

@@ -14,7 +14,7 @@ import {
   Cog,
 } from 'lucide-react'
 import heroImage from '@/assets/hero-garage.jpg'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import {
   Carousel,
   CarouselContent,
@@ -66,6 +66,9 @@ const Home = () => {
 
   const [reviews, setReviews] = useState([])
   const [averageRating, setAverageRating] = useState(5)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const emblaApiRef = useRef(null)
+
   useEffect(() => {
     fetch('/api/google-reviews')
       .then((res) => res.json())
@@ -75,6 +78,22 @@ const Home = () => {
         console.log('Google Reviews:', data.reviews)
       })
   }, [])
+
+  // Autoplay effect
+  useEffect(() => {
+    if (!reviews.length) return
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % Math.min(reviews.length, 5))
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [reviews.length])
+
+  // Scroll carousel to current index
+  useEffect(() => {
+    if (emblaApiRef.current && emblaApiRef.current.scrollTo) {
+      emblaApiRef.current.scrollTo(currentIndex)
+    }
+  }, [currentIndex])
 
   return (
     <div className="min-h-screen">
@@ -244,7 +263,12 @@ const Home = () => {
               </div>
               {/* Right: Carousel of Reviews */}
               <div className="flex-1 flex flex-col justify-center w-full">
-                <Carousel className="relative w-full max-w-full overflow-x-hidden">
+                <Carousel
+                  className="relative w-full max-w-full overflow-x-hidden"
+                  setApi={(api) => {
+                    emblaApiRef.current = api
+                  }}
+                >
                   <CarouselContent className="w-full max-w-full">
                     {reviews.slice(0, 5).map((review, idx) => (
                       <CarouselItem key={idx} className="p-4 w-full max-w-full">
@@ -301,8 +325,11 @@ const Home = () => {
                     {reviews.slice(0, 5).map((_, idx) => (
                       <span
                         key={idx}
-                        className={`inline-block w-2 h-2 rounded-full ${
-                          idx === 0 ? 'bg-primary' : 'bg-muted-foreground'
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`cursor-pointer inline-block w-2 h-2 rounded-full ${
+                          idx === currentIndex
+                            ? 'bg-primary'
+                            : 'bg-muted-foreground'
                         }`}
                       ></span>
                     ))}
