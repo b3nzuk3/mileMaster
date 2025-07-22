@@ -12,28 +12,10 @@ const About = () => {
   ]
 
   const team = [
+    // Removed Mike Rodriguez, Sarah Chen, and David Thompson
     {
-      name: 'Mike Rodriguez',
-      role: 'Master Technician',
-      experience: '15 years',
-      specialties: ['Engine Diagnostics', 'Transmission', 'European Vehicles'],
-    },
-    {
-      name: 'Sarah Chen',
-      role: 'Service Manager',
-      experience: '12 years',
-      specialties: ['Customer Service', 'Quality Control', 'Scheduling'],
-    },
-    {
-      name: 'David Thompson',
-      role: 'Brake Specialist',
-      experience: '10 years',
-      specialties: ['Brake Systems', 'Suspension', 'Safety Inspections'],
-    },
-    // New team members with images
-    {
-      name: 'MOSES INGOSI',
-      role: 'WORKSHOP MANAGER',
+      name: 'Moses Ingosi',
+      role: 'Workshop Manager',
       experience: '6 years',
       image:
         'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211371/mileMaster/4_ykutqd.png',
@@ -45,14 +27,14 @@ const About = () => {
       ],
     },
     {
-      name: 'CALISTINE CLENCH',
+      name: 'Calistine Clench',
       experience: '4 years',
       image:
         'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211384/mileMaster/3_nwgexo.png',
       specialties: ['Braking system', 'Suspension'],
     },
     {
-      name: 'JOSHUA ONYANGO',
+      name: 'Joshua Onyango',
       experience: '9 years',
       image:
         'https://res.cloudinary.com/dq3jxutxg/image/upload/v1753211388/mileMaster/6_rn3sfz.png',
@@ -168,6 +150,72 @@ const About = () => {
                 <li>• Family-owned and operated</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founders Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-foreground mb-8 text-center">
+            Meet the Founders of MileMaster Auto Care
+          </h2>
+          <p className="text-xl text-muted-foreground mb-12 text-center">
+            At the core of MileMaster Auto Care are two driven co-founders whose
+            complementary strengths power the company’s vision of delivering
+            honest, expert, and reliable automotive service.
+          </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Crispin Lughano */}
+            <div className="flex flex-col items-center text-center">
+              <img
+                src="/founder-crispin.jpg"
+                alt="Crispin Lughano"
+                className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-primary/30 shadow"
+              />
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                Crispin Lughano
+              </h3>
+              <p className="text-primary font-semibold mb-2">
+                Co-Founder & Business Director
+              </p>
+              <p className="text-muted-foreground mb-4">
+                With a strong background in business strategy and operations,
+                Crispin Lughano is the driving force behind MileMaster’s growth
+                and customer-focused vision. His leadership ensures the company
+                not only delivers quality service, but also builds long-term
+                relationships with clients through trust, transparency, and
+                professionalism. Crispin is passionate about creating a brand
+                that drivers can always count on.
+              </p>
+            </div>
+            {/* Joseph Mwaura */}
+            <div className="flex flex-col items-center text-center">
+              <img
+                src="/founder-joseph.jpg"
+                alt="Joseph Mwaura"
+                className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-primary/30 shadow"
+              />
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                Joseph Mwaura
+              </h3>
+              <p className="text-primary font-semibold mb-2">
+                Co-Founder & Lead Automotive Technician
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Joseph Mwaura is the technical engine behind MileMaster. A
+                highly skilled and dedicated technician, Joseph leads the garage
+                floor with precision, discipline, and deep mechanical expertise.
+                His hands-on approach and commitment to top-tier workmanship
+                guarantee every vehicle is repaired and maintained to the
+                highest standards.
+              </p>
+            </div>
+          </div>
+          <div className="text-center mt-8 text-lg text-muted-foreground">
+            Together, Crispin and Joseph combine business intelligence with
+            mechanical mastery — creating a reliable, customer-first auto care
+            experience that’s trusted across the region.
           </div>
         </div>
       </section>
