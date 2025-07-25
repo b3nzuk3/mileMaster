@@ -31,7 +31,7 @@ const Booking = () => {
     vehicleMake: '',
     vehicleModel: '',
     vehicleYear: '',
-    service: '',
+    service: [],
     timeSlot: '',
     notes: '',
   })
@@ -60,8 +60,18 @@ const Booking = () => {
     '4:00 PM',
   ]
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+  const handleServiceChange = (service: string) => {
+    setFormData((prev) => {
+      const current = prev.service as string[]
+      if (current.includes(service)) {
+        return { ...prev, service: current.filter((s) => s !== service) }
+      } else {
+        return { ...prev, service: [...current, service] }
+      }
+    })
   }
 
   const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeozoqdb'
@@ -78,7 +88,9 @@ const Booking = () => {
       vehicleMake: formData.vehicleMake,
       vehicleModel: formData.vehicleModel,
       vehicleYear: formData.vehicleYear,
-      service: formData.service,
+      service: Array.isArray(formData.service)
+        ? formData.service.join(', ')
+        : formData.service,
       timeSlot: formData.timeSlot,
       notes: formData.notes,
       date: date ? format(date, 'PPP') : '',
@@ -129,7 +141,9 @@ const Booking = () => {
               <div className="space-y-2 text-left">
                 <p>
                   <span className="font-semibold">Service:</span>{' '}
-                  {formData.service}
+                  {Array.isArray(formData.service)
+                    ? formData.service.join(', ')
+                    : formData.service}
                 </p>
                 <p>
                   <span className="font-semibold">Date:</span>{' '}
@@ -320,26 +334,28 @@ const Booking = () => {
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label className="text-base font-semibold">
+                    <Label className="text-base font-semibold mb-2 block">
                       Service Needed *
                     </Label>
-                    <Select
-                      value={formData.service}
-                      onValueChange={(value) =>
-                        handleInputChange('service', value)
-                      }
-                    >
-                      <SelectTrigger className="mt-2">
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {services.map((service) => (
-                          <SelectItem key={service} value={service}>
-                            {service}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <div className="flex flex-col gap-2 mt-2">
+                      {services.map((service) => (
+                        <label
+                          key={service}
+                          className="flex items-center gap-2 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={
+                              Array.isArray(formData.service) &&
+                              formData.service.includes(service)
+                            }
+                            onChange={() => handleServiceChange(service)}
+                            className="accent-primary h-4 w-4 rounded"
+                          />
+                          <span>{service}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                   <div>
                     <Label className="text-base font-semibold">
