@@ -162,7 +162,7 @@ const Booking = () => {
             </div>
             <p className="text-muted-foreground mb-6">
               Questions? Call us at{' '}
-              <span className="font-semibold text-primary">0769882914</span>
+              <span className="font-semibold text-primary">+254 786 203357</span>
             </p>
             <Button variant="hero" onClick={() => setIsSubmitted(false)}>
               Book Another Service

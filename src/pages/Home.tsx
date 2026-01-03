@@ -71,11 +71,26 @@ const Home = () => {
 
   useEffect(() => {
     fetch('/api/google-reviews')
-      .then((res) => res.json())
+      .then(async (res) => {
+        const contentType = res.headers.get('content-type')
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`)
+        }
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new Error('Response is not JSON')
+        }
+        return res.json()
+      })
       .then((data) => {
         setReviews(data.reviews || [])
         setAverageRating(data.rating || 5)
         console.log('Google Reviews:', data.reviews)
+      })
+      .catch((error) => {
+        console.error('Error fetching Google reviews:', error)
+        // Set empty reviews on error to prevent crashes
+        setReviews([])
+        setAverageRating(5)
       })
   }, [])
 
@@ -364,7 +379,7 @@ const Home = () => {
               className="text-lg px-8 py-4 border-background text-background hover:bg-background hover:text-foreground"
             >
               <Phone className="mr-2 h-5 w-5" />
-              Call Us: 0769882914
+              Call Us: +254 786 203357
             </Button>
           </div>
         </div>

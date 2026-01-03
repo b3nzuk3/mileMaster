@@ -22,9 +22,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['0769882914', 'Call for immediate assistance'],
+      details: ['+254 786 203357', 'Call for immediate assistance'],
       action: 'Call Now',
-      actionLink: 'tel:0769882914',
+      actionLink: 'tel:+254786203357',
     },
     {
       icon: Mail,

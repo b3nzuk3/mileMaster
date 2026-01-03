@@ -9,7 +9,16 @@ const Testimonials = () => {
   const [averageRating, setAverageRating] = useState(5)
   useEffect(() => {
     fetch('/api/google-reviews')
-      .then((res) => res.json())
+      .then(async (res) => {
+        const contentType = res.headers.get('content-type')
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`)
+        }
+        if (!contentType || !contentType.includes('application/json')) {
+          throw new Error('Response is not JSON')
+        }
+        return res.json()
+      })
       .then((data) => {
         let reviews = data.reviews || []
         // Sort by time (latest first) if time property exists
@@ -18,6 +27,12 @@ const Testimonials = () => {
         }
         setReviews(reviews)
         setAverageRating(data.rating || 5)
+      })
+      .catch((error) => {
+        console.error('Error fetching Google reviews:', error)
+        // Set empty reviews on error to prevent crashes
+        setReviews([])
+        setAverageRating(5)
       })
   }, [])
 

@@ -154,20 +154,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Founders Section */}
+      {/* Founder Section */}
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-foreground mb-8 text-center">
-            Meet the Founders of MileMaster Auto Care
+            Meet the Founder of MileMaster Auto Care
           </h2>
           <p className="text-xl text-muted-foreground mb-12 text-center">
-            At the core of MileMaster Auto Care are two driven co-founders whose
-            complementary strengths power the company’s vision of delivering
+            At the heart of MileMaster Auto Care is a visionary leader whose
+            dedication and expertise drive the company's commitment to delivering
             honest, expert, and reliable automotive service.
           </p>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="flex justify-center">
             {/* Crispin Lughano */}
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center max-w-2xl">
               <img
                 src="https://res.cloudinary.com/dq3jxutxg/image/upload/v1753212726/mileMaster/1_h0dcrd.png"
                 alt="Crispin Lughano"
@@ -176,46 +176,22 @@ const About = () => {
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 Crispin Lughano
               </h3>
-              <p className="text-primary font-semibold mb-2">
-                Co-Founder & Business Director
+              <p className="text-primary font-semibold mb-4">
+                Founder & Business Director
               </p>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-muted-foreground mb-4 text-lg">
                 With a strong background in business strategy and operations,
-                Crispin Lughano is the driving force behind MileMaster’s growth
-                and customer-focused vision. His leadership ensures the company
-                not only delivers quality service, but also builds long-term
-                relationships with clients through trust, transparency, and
-                professionalism. Crispin is passionate about creating a brand
-                that drivers can always count on.
+                Crispin Lughano is the visionary founder and driving force behind
+                MileMaster Auto Care. Under his leadership, the company has grown
+                into a trusted name in automotive service, known for delivering
+                quality workmanship and building lasting relationships with
+                clients. Crispin's commitment to transparency, professionalism,
+                and customer satisfaction ensures that every vehicle receives
+                expert care. His passion for creating a brand that drivers can
+                always count on has made MileMaster a trusted choice across the
+                region.
               </p>
             </div>
-            {/* Joseph Mwaura */}
-            <div className="flex flex-col items-center text-center">
-              <img
-                src="https://res.cloudinary.com/dq3jxutxg/image/upload/v1753212730/mileMaster/2_xm5wv1.png"
-                alt="Joseph Mwaura"
-                className="w-40 h-40 object-cover rounded-full mb-6 border-4 border-primary/30 shadow"
-              />
-              <h3 className="text-2xl font-bold text-foreground mb-2">
-                Joseph Mwaura
-              </h3>
-              <p className="text-primary font-semibold mb-2">
-                Co-Founder & Lead Automotive Technician
-              </p>
-              <p className="text-muted-foreground mb-4">
-                Joseph Mwaura is the technical engine behind MileMaster. A
-                highly skilled and dedicated technician, Joseph leads the garage
-                floor with precision, discipline, and deep mechanical expertise.
-                His hands-on approach and commitment to top-tier workmanship
-                guarantee every vehicle is repaired and maintained to the
-                highest standards.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-8 text-lg text-muted-foreground">
-            Together, Crispin and Joseph combine business intelligence with
-            mechanical mastery — creating a reliable, customer-first auto care
-            experience that’s trusted across the region.
           </div>
         </div>
       </section>
