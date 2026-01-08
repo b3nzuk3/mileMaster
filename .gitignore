@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# SEO Documentation (exclude from repository)
+*.md
+!README.md

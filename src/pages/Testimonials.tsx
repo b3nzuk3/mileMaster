@@ -3,8 +3,10 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router-dom'
 import { Star, Quote } from 'lucide-react'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
 
 const Testimonials = () => {
+  const seoData = usePageSEO('testimonials')
   const [reviews, setReviews] = useState([])
   const [averageRating, setAverageRating] = useState(5)
   useEffect(() => {
@@ -48,17 +50,18 @@ const Testimonials = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header Section */}
-      <section className="py-20 bg-gradient-dark text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Customer Testimonials</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what our valued customers
-            have to say about their experience with MileMaster Auto Care.
-          </p>
-        </div>
-      </section>
+    <>
+      <SEOHead {...seoData} />
+      <div className="min-h-screen pt-20">
+        {/* Header Section */}
+        <section className="py-20 bg-gradient-dark text-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-5xl font-bold mb-6">Customer Reviews — MileMaster Auto Care Nairobi</h1>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              See what Nairobi drivers say about MileMaster Auto Care. Real Google reviews from satisfied customers across Nairobi.
+            </p>
+          </div>
+        </section>
 
       {/* Testimonials Grid */}
       <section className="py-20 bg-background">
@@ -186,6 +189,7 @@ const Testimonials = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

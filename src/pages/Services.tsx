@@ -1,4 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
+import { generateServiceSchema, generateFAQSchema } from '@/lib/seo-utils'
+import { servicesFAQs } from '@/data/faqs'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router-dom'
 import {
@@ -14,12 +17,15 @@ import {
 } from 'lucide-react'
 
 const Services = () => {
+  const seoData = usePageSEO('services')
+  const faqSchema = generateFAQSchema(servicesFAQs)
+  
   const services = [
     {
       icon: Car,
-      name: 'Engine Diagnostics',
+      name: 'Engine Diagnostics & Repair',
       description:
-        'Comprehensive computer diagnostics to identify engine issues quickly and accurately.',
+        'Comprehensive computer diagnostics and engine repair services in Nairobi. Quick identification and fixing of engine issues.',
       features: [
         'OBD-II scanning',
         'Performance testing',
@@ -115,18 +121,18 @@ const Services = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header Section */}
-      <section className="py-20 bg-gradient-dark text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Our Services</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Comprehensive automotive services from routine maintenance to
-            complex repairs. Our certified technicians use state-of-the-art
-            equipment to keep your vehicle running perfectly.
-          </p>
-        </div>
-      </section>
+    <>
+      <SEOHead {...seoData} schema={faqSchema} />
+      <div className="min-h-screen pt-20">
+        {/* Header Section */}
+        <section className="py-20 bg-gradient-dark text-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-5xl font-bold mb-6">Car Repair Services in Nairobi</h1>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              Complete auto repair services in Nairobi: brake repair, engine diagnostics, oil change, tyre alignment & more. Expert mechanics serving Westlands, Karen, Kilimani, and beyond.
+            </p>
+          </div>
+        </section>
 
       {/* Services Grid */}
       <section className="py-20 bg-background">
@@ -200,6 +206,7 @@ const Services = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

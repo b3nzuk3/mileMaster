@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
+import { generateFAQSchema } from '@/lib/seo-utils'
+import { bookingFAQs } from '@/data/faqs'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -22,6 +25,8 @@ import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 
 const Booking = () => {
+  const seoData = usePageSEO('booking')
+  const faqSchema = generateFAQSchema(bookingFAQs)
   const [date, setDate] = useState<Date>()
   const [formData, setFormData] = useState({
     firstName: '',
@@ -162,7 +167,7 @@ const Booking = () => {
             </div>
             <p className="text-muted-foreground mb-6">
               Questions? Call us at{' '}
-              <span className="font-semibold text-primary">+254 786 203357</span>
+              <span className="font-semibold text-primary">+254 721 421996</span>
             </p>
             <Button variant="hero" onClick={() => setIsSubmitted(false)}>
               Book Another Service
@@ -174,16 +179,18 @@ const Booking = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-muted">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-foreground mb-4">
-            Book Your Service
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            Schedule your appointment with MileMaster Auto Care today
-          </p>
-        </div>
+    <>
+      <SEOHead {...seoData} schema={faqSchema} />
+      <div className="min-h-screen pt-20 bg-muted">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl font-bold text-foreground mb-4">
+              Book Car Service in Nairobi
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Schedule your appointment with MileMaster Auto Care. Call +254 721 421996 or book online.
+            </p>
+          </div>
 
         <Card className="shadow-automotive">
           <CardHeader className="bg-gradient-hero text-primary-foreground">
@@ -449,6 +456,7 @@ const Booking = () => {
         </Card>
       </div>
     </div>
+    </>
   )
 }
 

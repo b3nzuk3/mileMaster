@@ -6,10 +6,12 @@ import { Textarea } from '@/components/ui/textarea'
 import { NavLink } from 'react-router-dom'
 import { MapPin, Phone, Mail, Clock, Calendar, Car, Send } from 'lucide-react'
 import { useState } from 'react'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeozoqdb'
 
 const Contact = () => {
+  const seoData = usePageSEO('contact')
   const contactInfo = [
     {
       icon: MapPin,
@@ -22,9 +24,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+254 786 203357', 'Call for immediate assistance'],
+      details: ['+254 721 421996', 'Call for immediate assistance'],
       action: 'Call Now',
-      actionLink: 'tel:+254786203357',
+      actionLink: 'tel:+254721421996',
     },
     {
       icon: Mail,
@@ -75,17 +77,18 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header Section */}
-      <section className="py-20 bg-gradient-dark text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
-            Get in touch with MileMaster Auto Care. We're here to answer your
-            questions and provide the automotive service you need.
-          </p>
-        </div>
-      </section>
+    <>
+      <SEOHead {...seoData} />
+      <div className="min-h-screen pt-20">
+        {/* Header Section */}
+        <section className="py-20 bg-gradient-dark text-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-5xl font-bold mb-6">Contact MileMaster Auto Care — Garage in Nairobi</h1>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              Get in touch with MileMaster Auto Care. Located on Thika Road, Nairobi. Call +254 721 421996 or visit us Monday-Saturday.
+            </p>
+          </div>
+        </section>
 
       {/* Contact Information */}
       <section className="py-20 bg-background">
@@ -386,6 +389,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 

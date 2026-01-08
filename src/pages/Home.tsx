@@ -22,9 +22,14 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from '@/components/ui/carousel'
-import googleLogo from '@/assets/google-logo.svg' // Add a Google logo to your assets if you don't have one
+import googleLogo from '@/assets/google-logo.svg'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
+import { generateFAQSchema } from '@/lib/seo-utils'
+import { homeFAQs } from '@/data/faqs'
 
 const Home = () => {
+  const seoData = usePageSEO('home')
+  const faqSchema = generateFAQSchema(homeFAQs)
   const features = [
     {
       icon: Wrench,
@@ -111,9 +116,11 @@ const Home = () => {
   }, [currentIndex])
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <>
+      <SEOHead {...seoData} schema={faqSchema} />
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -123,14 +130,10 @@ const Home = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
-            <span className="text-primary">Mile</span>Master
-            <br />
-            <span className="text-background">Auto Care</span>
+            Trusted Garage in Nairobi — <span className="text-primary">Mile</span>Master Auto Care
           </h1>
           <p className="text-xl sm:text-2xl text-background/90 mb-8 max-w-3xl mx-auto">
-            Professional automotive service you can trust. From routine
-            maintenance to complex repairs, we keep your vehicle running at peak
-            performance.
+            Professional car repair, servicing & diagnostics in Nairobi. Serving Westlands, Karen, Kilimani, Parklands, and CBD. Fast, reliable service with quality parts and expert mechanics.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -379,12 +382,34 @@ const Home = () => {
               className="text-lg px-8 py-4 border-background text-background hover:bg-background hover:text-foreground"
             >
               <Phone className="mr-2 h-5 w-5" />
-              Call Us: +254 786 203357
+              Call Us: +254 721 421996
             </Button>
           </div>
         </div>
       </section>
+      
+      {/* FAQ Section for SEO */}
+      <section className="py-20 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {homeFAQs.map((faq, index) => (
+              <div key={index} className="border-b border-border pb-6">
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
+    </>
   )
 }
 

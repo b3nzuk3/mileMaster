@@ -1,9 +1,11 @@
 import { Card, CardContent } from '@/components/ui/card'
+import { SEOHead, usePageSEO } from '@/components/SEOHead'
 import { Button } from '@/components/ui/button'
 import { NavLink } from 'react-router-dom'
 import { Users, Award, Calendar, MapPin } from 'lucide-react'
 
 const About = () => {
+  const seoData = usePageSEO('about')
   const stats = [
     { icon: Calendar, number: '2+', label: 'Years Experience' },
     { icon: Users, number: '1000+', label: 'Happy Customers' },
@@ -49,19 +51,21 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-dark text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-6">
-                About MileMaster Auto Care
-              </h1>
-              <p className="text-xl opacity-90 mb-8">
-                For over 2 years, MileMaster Auto Care has been the trusted
-                choice for automotive service in our community. We combine
-                traditional craftsmanship with cutting-edge technology to
+    <>
+      <SEOHead {...seoData} />
+      <div className="min-h-screen pt-20">
+        {/* Hero Section */}
+        <section className="py-20 bg-gradient-dark text-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-5xl font-bold mb-6">
+                  About MileMaster Auto Care — Your Trusted Nairobi Garage
+                </h1>
+                <p className="text-xl opacity-90 mb-8">
+                  For over 2 years, MileMaster Auto Care has been the trusted
+                  choice for automotive service in Nairobi. We combine
+                  traditional craftsmanship with cutting-edge technology to
                 deliver exceptional results.
               </p>
               <Button variant="hero" size="lg" asChild>
@@ -289,6 +293,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   )
 }
 
