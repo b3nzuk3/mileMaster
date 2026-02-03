@@ -7,74 +7,58 @@
   
   <!-- Homepage - Highest Priority -->
   <url>
-    <loc>https://www.milemasterautocare.com/</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
+  <!-- Thika Road Landing Page - High Priority for Local SEO -->
+  <url>
+    <loc>https://milemasterautocare.com/thika-road</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
   <!-- Services Page - High Priority for Local SEO -->
   <url>
-    <loc>https://www.milemasterautocare.com/services</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/services</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Booking Page - High Priority for Conversions -->
   <url>
-    <loc>https://www.milemasterautocare.com/booking</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/booking</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Contact Page - Important for Local SEO -->
   <url>
-    <loc>https://www.milemasterautocare.com/contact</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/contact</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Testimonials Page - Social Proof for Local SEO -->
   <url>
-    <loc>https://www.milemasterautocare.com/testimonials</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/testimonials</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- About Page -->
   <url>
-    <loc>https://www.milemasterautocare.com/about</loc>
-    <lastmod>2026-01-08</lastmod>
+    <loc>https://milemasterautocare.com/about</loc>
+    <lastmod>2026-02-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Future Service Landing Pages (Add when created) -->
-  <!--
-  <url>
-    <loc>https://www.milemasterautocare.com/services/brake-repair-nairobi</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.milemasterautocare.com/services/engine-diagnostics-nairobi</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.milemasterautocare.com/services/tyre-alignment-nairobi</loc>
-    <lastmod>2026-01-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  -->
   
 </urlset>

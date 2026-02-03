@@ -16,10 +16,10 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['MILEMASTER AUTO CARE LTD', 'Thika Rd, Nairobi'],
+      details: ['MILEMASTER AUTO CARE LTD', 'Thika Road, Nairobi, Kenya', 'Near Ruiru & Kasarani'],
       action: 'Get Directions',
       actionLink:
-        'https://www.google.com/maps/place/MILEMASTER+AUTO+CARE+LTD,+Thika+Rd,+Nairobi',
+        'https://www.google.com/maps/place/MILEMASTER+AUTO+CARE+LTD/@-1.229517,36.878837,17z',
     },
     {
       icon: Phone,
@@ -83,9 +83,9 @@ const Contact = () => {
         {/* Header Section */}
         <section className="py-20 bg-gradient-dark text-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl font-bold mb-6">Contact MileMaster Auto Care — Garage in Nairobi</h1>
+            <h1 className="text-5xl font-bold mb-6">Contact MileMaster Auto Care — Garage on Thika Road, Nairobi</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Get in touch with MileMaster Auto Care. Located on Thika Road, Nairobi. Call +254 721 421996 or visit us Monday-Saturday.
+              Get in touch with MileMaster Auto Care Ltd. Conveniently located on Thika Road, Nairobi, serving Ruiru, Kasarani, and surrounding areas. Call +254 721 421996 or visit us Monday-Saturday.
             </p>
           </div>
         </section>
@@ -321,19 +321,19 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Find Our Location
+              Location & Directions to MileMaster Auto Care Ltd
             </h2>
             <p className="text-xl text-muted-foreground">
-              Conveniently located in the heart of Service City
+              Conveniently located on Thika Road, Nairobi — Easy access from Ruiru, Kasarani, Roysambu & CBD
             </p>
           </div>
 
-          {/* Placeholder for map */}
+          {/* Google Map Embed with exact coordinates */}
           <Card className="overflow-hidden shadow-automotive">
             <div className="h-96 bg-secondary flex items-center justify-center p-0">
               <iframe
-                title="MILEMASTER AUTO CARE LTD Map"
-                src="https://www.google.com/maps?q=MILEMASTER+AUTO+CARE+LTD,+Thika+Rd,+Nairobi&output=embed"
+                title="MILEMASTER AUTO CARE LTD - Thika Road, Nairobi"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7!2d36.878837!3d-1.229517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTMnNDYuMyJTIDM2wrA1Mic0My44IkU!5e0!3m2!1sen!2ske!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -343,6 +343,19 @@ const Contact = () => {
               ></iframe>
             </div>
           </Card>
+          
+          {/* Address Details */}
+          <div className="mt-8 text-center">
+            <p className="text-lg text-foreground font-semibold">
+              MILEMASTER AUTO CARE LTD
+            </p>
+            <p className="text-muted-foreground">
+              Thika Road, Nairobi, Kenya | Coordinates: -1.229517, 36.878837
+            </p>
+            <p className="text-muted-foreground mt-2">
+              <strong>Phone:</strong> +254 721 421996 | <strong>Email:</strong> milemasterac@gmail.com
+            </p>
+          </div>
         </div>
       </section>
 

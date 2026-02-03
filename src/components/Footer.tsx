@@ -19,7 +19,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-background/80 mb-4">
-              Nairobi's trusted auto repair shop. Professional car servicing, diagnostics, and repairs since {BUSINESS_INFO.foundingDate}.
+              Your trusted auto repair garage on Thika Road, Nairobi. Professional car servicing, diagnostics, and repairs since {BUSINESS_INFO.foundingDate}. Serving Ruiru, Kasarani & beyond.
             </p>
             {/* Social Media - Add when available */}
             {/* <div className="flex space-x-4">
@@ -159,7 +159,7 @@ const Footer = () => {
             © {currentYear} {BUSINESS_INFO.name}. All rights reserved.
           </p>
           <p className="mt-2">
-            Professional Auto Repair in Nairobi | Serving Westlands, Karen, Kilimani, Parklands & Beyond
+            Professional Auto Repair on Thika Road, Nairobi | Serving Ruiru, Kasarani, Roysambu, Githurai & Beyond
           </p>
         </div>
       </div>

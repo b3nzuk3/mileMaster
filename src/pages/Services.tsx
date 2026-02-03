@@ -25,7 +25,7 @@ const Services = () => {
       icon: Car,
       name: 'Engine Diagnostics & Repair',
       description:
-        'Comprehensive computer diagnostics and engine repair services in Nairobi. Quick identification and fixing of engine issues.',
+        'Comprehensive computer diagnostics and engine repair services on Thika Road. Quick identification and fixing of engine issues for vehicles from Ruiru, Kasarani, and Nairobi.',
       features: [
         'OBD-II scanning',
         'Performance testing',
@@ -37,7 +37,7 @@ const Services = () => {
       icon: Gauge,
       name: 'Brake Service',
       description:
-        'Complete brake system inspection, repair, and replacement for optimal safety.',
+        'Complete brake system inspection, repair, and replacement on Thika Road for optimal safety. Same-day service available.',
       features: [
         'Brake pad replacement',
         'Rotor resurfacing',
@@ -49,7 +49,7 @@ const Services = () => {
       icon: Cog,
       name: 'Oil Change & Maintenance',
       description:
-        'Regular maintenance services to keep your vehicle running smoothly.',
+        'Regular maintenance services on Thika Road to keep your vehicle running smoothly. Quality oils and filters for all makes.',
       features: [
         'Full synthetic oil',
         'Filter replacement',
@@ -59,9 +59,9 @@ const Services = () => {
     },
     {
       icon: Wrench,
-      name: 'Suspension Services',
+      name: 'Suspension & Steering Services',
       description:
-        'Expert suspension inspection, repair, and upgrades for a smoother, safer ride.',
+        'Expert suspension inspection, repair, and upgrades on Thika Road for a smoother, safer ride. Essential for Nairobi roads.',
       features: [
         'Shock and strut replacement',
         'Suspension check',
@@ -71,9 +71,9 @@ const Services = () => {
     },
     {
       icon: Zap,
-      name: 'Electrical Systems',
+      name: 'Auto Electrical Systems',
       description:
-        'Expert diagnosis and repair of all electrical components and systems.',
+        'Expert diagnosis and repair of all electrical components at our Thika Road garage. Battery, alternator, and wiring services.',
       features: [
         'Battery testing',
         'Alternator service',
@@ -85,7 +85,7 @@ const Services = () => {
       icon: Shield,
       name: 'Transmission Service',
       description:
-        'Professional transmission maintenance and repair for all vehicle types.',
+        'Professional transmission maintenance and repair on Thika Road for all vehicle types. Manual and automatic transmissions.',
       features: [
         'Fluid change',
         'Filter replacement',
@@ -97,7 +97,7 @@ const Services = () => {
       icon: Thermometer,
       name: 'Cooling System',
       description:
-        'Keep your engine cool with our comprehensive cooling system services.',
+        'Keep your engine cool with our comprehensive cooling system services on Thika Road. Prevent overheating issues.',
       features: [
         'Radiator service',
         'Coolant flush',
@@ -109,7 +109,7 @@ const Services = () => {
       icon: Battery,
       name: 'Hybrid Battery Services',
       description:
-        'Specialized hybrid battery diagnostics, maintenance, and replacement for hybrid vehicles.',
+        'Specialized hybrid battery diagnostics, maintenance, and replacement at our Thika Road garage for hybrid vehicles.',
       features: [
         'Hybrid battery health check',
         'Battery reconditioning',
@@ -127,9 +127,9 @@ const Services = () => {
         {/* Header Section */}
         <section className="py-20 bg-gradient-dark text-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl font-bold mb-6">Car Repair Services in Nairobi</h1>
+            <h1 className="text-5xl font-bold mb-6">Car Repair Services on Thika Road, Nairobi</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Complete auto repair services in Nairobi: brake repair, engine diagnostics, oil change, tyre alignment & more. Expert mechanics serving Westlands, Karen, Kilimani, and beyond.
+              Complete auto repair services on Thika Road: brake repair, engine diagnostics, suspension, oil change & more. Expert mechanics serving Ruiru, Kasarani, Roysambu, and the greater Nairobi area.
             </p>
           </div>
         </section>
@@ -179,11 +179,11 @@ const Services = () => {
       <section className="py-20 bg-muted">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
-            Need Service? We're Here to Help
+            Need Service on Thika Road? We're Here to Help
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Don't see the service you need? Contact us - we handle all types of
-            automotive repairs and maintenance.
+            Don't see the service you need? Contact MileMaster Auto Care on Thika Road - we handle all types of
+            automotive repairs and maintenance for drivers from Ruiru, Kasarani, and Nairobi.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

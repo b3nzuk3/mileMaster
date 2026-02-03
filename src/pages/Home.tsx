@@ -130,10 +130,10 @@ const Home = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
-            Trusted Garage in Nairobi — <span className="text-primary">Mile</span>Master Auto Care
+            Reliable Auto Repair Garage on Thika Road — <span className="text-primary">Mile</span>Master Auto Care
           </h1>
           <p className="text-xl sm:text-2xl text-background/90 mb-8 max-w-3xl mx-auto">
-            Professional car repair, servicing & diagnostics in Nairobi. Serving Westlands, Karen, Kilimani, Parklands, and CBD. Fast, reliable service with quality parts and expert mechanics.
+            Expert auto repair garage along Thika Road, Nairobi. Vehicle diagnostics, brakes, suspension, and more. Serving Ruiru, Kasarani, Roysambu & beyond. Fast, reliable service with quality parts and expert mechanics.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -164,11 +164,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Why Choose MileMaster?
+              Why Choose MileMaster on Thika Road?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We combine cutting-edge technology with traditional craftsmanship
-              to deliver exceptional automotive service every time.
+              Conveniently located on Thika Road, we combine cutting-edge technology with traditional craftsmanship
+              to deliver exceptional automotive service to drivers from Ruiru, Kasarani, and Nairobi.
             </p>
           </div>
 
@@ -198,10 +198,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Popular Services
+              Our Services on Thika Road
             </h2>
             <p className="text-xl text-muted-foreground">
-              Quick access to our most requested automotive services
+              Professional auto repair and maintenance services for vehicles along Thika Road and surrounding areas
             </p>
           </div>
 

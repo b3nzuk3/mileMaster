@@ -11,6 +11,7 @@ import About from './pages/About'
 import Booking from './pages/Booking'
 import Testimonials from './pages/Testimonials'
 import Contact from './pages/Contact'
+import ThikaRoad from './pages/ThikaRoad'
 import NotFound from './pages/NotFound'
 import { Analytics } from '@vercel/analytics/react'
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/booking" element={<Booking />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/thika-road" element={<ThikaRoad />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

@@ -10,7 +10,7 @@ const About = () => {
     { icon: Calendar, number: '2+', label: 'Years Experience' },
     { icon: Users, number: '1000+', label: 'Happy Customers' },
     { icon: Award, number: '10+', label: 'Certifications' },
-    { icon: MapPin, number: '1', label: 'Convenient Location' },
+    { icon: MapPin, number: '1', label: 'Thika Road Location' },
   ]
 
   const team = [
@@ -60,11 +60,12 @@ const About = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-5xl font-bold mb-6">
-                  About MileMaster Auto Care — Your Trusted Nairobi Garage
+                  About MileMaster Auto Care — Your Trusted Thika Road Garage
                 </h1>
                 <p className="text-xl opacity-90 mb-8">
-                  For over 2 years, MileMaster Auto Care has been the trusted
-                  choice for automotive service in Nairobi. We combine
+                  For over 2 years, MileMaster Auto Care Ltd has been the trusted
+                  choice for automotive service on Thika Road, Nairobi. Strategically located to serve 
+                  drivers from Ruiru, Kasarani, and surrounding areas, we combine
                   traditional craftsmanship with cutting-edge technology to
                 deliver exceptional results.
               </p>

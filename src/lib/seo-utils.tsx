@@ -113,10 +113,13 @@ export function generateServiceSchema(service: {
       }
     },
     description: service.description,
-    areaServed: {
-      '@type': 'City',
-      name: 'Nairobi'
-    },
+    areaServed: [
+      { '@type': 'Place', name: 'Thika Road' },
+      { '@type': 'City', name: 'Ruiru' },
+      { '@type': 'Place', name: 'Kasarani' },
+      { '@type': 'Place', name: 'Roysambu' },
+      { '@type': 'City', name: 'Nairobi' }
+    ],
     ...(service.price && { offers: {
       '@type': 'Offer',
       price: service.price,
