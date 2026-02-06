@@ -167,7 +167,7 @@ const Booking = () => {
             </div>
             <p className="text-muted-foreground mb-6">
               Questions? Call us at{' '}
-              <span className="font-semibold text-primary">+254 721 421996</span>
+              <span className="font-semibold text-primary">+254 712 135257</span>
             </p>
             <Button variant="hero" onClick={() => setIsSubmitted(false)}>
               Book Another Service
@@ -188,7 +188,7 @@ const Booking = () => {
               Book Car Service in Nairobi
             </h1>
             <p className="text-xl text-muted-foreground">
-              Schedule your appointment with MileMaster Auto Care. Call +254 721 421996 or book online.
+              Schedule your appointment with MileMaster Auto Care. Call +254 712 135257 or book online.
             </p>
           </div>
 

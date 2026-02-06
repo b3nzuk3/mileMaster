@@ -24,9 +24,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+254 721 421996', 'Call for immediate assistance'],
+      details: ['+254 712 135257', 'Call for immediate assistance'],
       action: 'Call Now',
-      actionLink: 'tel:+254721421996',
+      actionLink: 'tel:+254712135257',
     },
     {
       icon: Mail,
@@ -85,7 +85,7 @@ const Contact = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-5xl font-bold mb-6">Contact MileMaster Auto Care — Garage on Thika Road, Nairobi</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Get in touch with MileMaster Auto Care Ltd. Conveniently located on Thika Road, Nairobi, serving Ruiru, Kasarani, and surrounding areas. Call +254 721 421996 or visit us Monday-Saturday.
+              Get in touch with MileMaster Auto Care Ltd. Conveniently located on Thika Road, Nairobi, serving Ruiru, Kasarani, and surrounding areas. Call +254 712 135257 or visit us Monday-Saturday.
             </p>
           </div>
         </section>
@@ -353,7 +353,7 @@ const Contact = () => {
               Thika Road, Nairobi, Kenya | Coordinates: -1.229517, 36.878837
             </p>
             <p className="text-muted-foreground mt-2">
-              <strong>Phone:</strong> +254 721 421996 | <strong>Email:</strong> milemasterac@gmail.com
+              <strong>Phone:</strong> +254 712 135257 | <strong>Email:</strong> milemasterac@gmail.com
             </p>
           </div>
         </div>

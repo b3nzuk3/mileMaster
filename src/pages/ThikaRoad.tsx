@@ -104,9 +104,9 @@ const ThikaRoad = () => {
                 </NavLink>
               </Button>
               <Button variant="automotive" size="lg" asChild>
-                <a href="tel:+254721421996">
+                <a href="tel:+254712135257">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call +254 721 421996
+                  Call +254 712 135257
                 </a>
               </Button>
             </div>
@@ -229,9 +229,9 @@ const ThikaRoad = () => {
                 <CardContent className="p-6">
                   <Phone className="h-10 w-10 text-primary mx-auto mb-4" />
                   <h4 className="text-lg font-bold text-foreground mb-2">Phone</h4>
-                  <p className="text-muted-foreground mb-2">+254 721 421996</p>
+                  <p className="text-muted-foreground mb-2">+254 712 135257</p>
                   <Button variant="link" asChild>
-                    <a href="tel:+254721421996">Call Now</a>
+                    <a href="tel:+254712135257">Call Now</a>
                   </Button>
                 </CardContent>
               </Card>

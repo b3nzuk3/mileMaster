@@ -3,11 +3,11 @@
 export const homeFAQs = [
   {
     question: 'Where is MileMaster Auto Care located on Thika Road?',
-    answer: 'MileMaster Auto Care Ltd is located on Thika Road in Nairobi, Kenya (coordinates: -1.229517, 36.878837). We serve customers from Ruiru, Kasarani, Roysambu, Githurai, Kahawa, and surrounding areas. Call +254 721 421996 for directions or visit our contact page for a map.'
+    answer: 'MileMaster Auto Care Ltd is located on Thika Road in Nairobi, Kenya (coordinates: -1.229517, 36.878837). We serve customers from Ruiru, Kasarani, Roysambu, Githurai, Kahawa, and surrounding areas. Call +254 712 135257 for directions or visit our contact page for a map.'
   },
   {
     question: 'What are your opening hours at the Thika Road garage?',
-    answer: 'We are open Monday to Friday from 7:00 AM to 6:00 PM, and Saturday from 8:00 AM to 4:00 PM. We are closed on Sundays. Book your appointment online or call +254 721 421996. Walk-ins welcome but calling ahead is recommended.'
+    answer: 'We are open Monday to Friday from 7:00 AM to 6:00 PM, and Saturday from 8:00 AM to 4:00 PM. We are closed on Sundays. Book your appointment online or call +254 712 135257. Walk-ins welcome but calling ahead is recommended.'
   },
   {
     question: 'How much does car servicing cost at MileMaster on Thika Road?',
@@ -15,7 +15,7 @@ export const homeFAQs = [
   },
   {
     question: 'Do you offer mobile mechanic services near Thika Road?',
-    answer: 'Yes, we offer mobile mechanic services for select repairs and diagnostics within the Thika Road corridor, Ruiru, Kasarani, and Nairobi areas. This includes jumpstarts, battery replacement, and minor repairs. Call +254 721 421996 to check availability.'
+    answer: 'Yes, we offer mobile mechanic services for select repairs and diagnostics within the Thika Road corridor, Ruiru, Kasarani, and Nairobi areas. This includes jumpstarts, battery replacement, and minor repairs. Call +254 712 135257 to check availability.'
   },
   {
     question: 'What car brands do you service at your Thika Road garage?',
@@ -27,7 +27,7 @@ export const homeFAQs = [
   },
   {
     question: 'Can I get a free quote for car repair on Thika Road?',
-    answer: 'Absolutely! Call us at +254 721 421996 or visit our booking page to describe your issue. We provide free quotes and estimates for all automotive repairs and services at our Thika Road garage.'
+    answer: 'Absolutely! Call us at +254 712 135257 or visit our booking page to describe your issue. We provide free quotes and estimates for all automotive repairs and services at our Thika Road garage.'
   },
   {
     question: 'Do you accept M-Pesa payments at MileMaster?',
@@ -42,7 +42,7 @@ export const servicesFAQs = [
   },
   {
     question: 'How long does brake repair take at your Thika Road garage?',
-    answer: 'Most brake repairs including pad replacement take 2-4 hours at our Thika Road location. Complete brake system overhauls may take a full day. We provide same-day service for most brake repairs. Call +254 721 421996 for urgent brake issues.'
+    answer: 'Most brake repairs including pad replacement take 2-4 hours at our Thika Road location. Complete brake system overhauls may take a full day. We provide same-day service for most brake repairs. Call +254 712 135257 for urgent brake issues.'
   },
   {
     question: 'Do you do engine diagnostics on Thika Road?',
@@ -50,7 +50,7 @@ export const servicesFAQs = [
   },
   {
     question: 'Can you align my tyres the same day on Thika Road?',
-    answer: 'Yes, tyre alignment (wheel alignment) is typically completed within 1-2 hours at our Thika Road garage. We offer same-day service with no appointment needed, though calling ahead at +254 721 421996 ensures faster service.'
+    answer: 'Yes, tyre alignment (wheel alignment) is typically completed within 1-2 hours at our Thika Road garage. We offer same-day service with no appointment needed, though calling ahead at +254 712 135257 ensures faster service.'
   },
   {
     question: 'Do you sell tyres and batteries at MileMaster Thika Road?',
@@ -61,7 +61,7 @@ export const servicesFAQs = [
 export const bookingFAQs = [
   {
     question: 'How do I book a service appointment at MileMaster Thika Road?',
-    answer: 'You can book online through our website, call us at +254 721 421996, or visit our garage on Thika Road, Nairobi. Online booking is available 24/7 for your convenience. We serve customers from Ruiru, Kasarani, and surrounding areas.'
+    answer: 'You can book online through our website, call us at +254 712 135257, or visit our garage on Thika Road, Nairobi. Online booking is available 24/7 for your convenience. We serve customers from Ruiru, Kasarani, and surrounding areas.'
   },
   {
     question: 'Can I drop off my car early in the morning on Thika Road?',

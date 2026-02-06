@@ -2,7 +2,7 @@
 export const BUSINESS_INFO = {
   name: 'MileMaster Auto Care',
   legalName: 'MILEMASTER AUTO CARE LTD',
-  phone: '+254 721 421996',
+  phone: '+254 712 135257',
   email: 'milemasterac@gmail.com',
   address: {
     streetAddress: 'Thika Road',
@@ -50,7 +50,7 @@ export const SITE_CONFIG = {
   siteUrl: 'https://milemasterautocare.com',
   siteName: 'MileMaster Auto Care',
   defaultTitle: 'MileMaster Auto Care — Garage on Thika Road, Nairobi',
-  defaultDescription: 'Expert auto repair garage along Thika Road, Nairobi. Vehicle diagnostics, brakes, suspension, and more. Call +254 721 421996. Serving Ruiru, Kasarani & beyond.',
+  defaultDescription: 'Expert auto repair garage along Thika Road, Nairobi. Vehicle diagnostics, brakes, suspension, and more. Call +254 712 135257. Serving Ruiru, Kasarani & beyond.',
   ogImage: '/og-image.jpg',
   twitterHandle: '',
 }
@@ -87,7 +87,7 @@ export const LOCAL_KEYWORDS = {
 export const PAGE_SEO = {
   home: {
     title: 'MileMaster Auto Care — Garage on Thika Road, Nairobi',
-    description: 'Expert auto repair garage along Thika Road, Nairobi. Vehicle diagnostics, brakes, suspension, and more. Call +254 721 421996. Serving Ruiru, Kasarani & beyond.',
+    description: 'Expert auto repair garage along Thika Road, Nairobi. Vehicle diagnostics, brakes, suspension, and more. Call +254 712 135257. Serving Ruiru, Kasarani & beyond.',
     keywords: 'garage Thika Road, auto repair Thika Road, mechanic Thika Road Nairobi, car service Ruiru, auto garage Kasarani',
     canonical: '/'
   },
@@ -105,7 +105,7 @@ export const PAGE_SEO = {
   },
   booking: {
     title: 'Book Car Service on Thika Road — MileMaster Auto Care',
-    description: 'Book your car service appointment at MileMaster Auto Care on Thika Road. Quick scheduling for all auto repairs. Call +254 721 421996. Serving Ruiru & Kasarani.',
+    description: 'Book your car service appointment at MileMaster Auto Care on Thika Road. Quick scheduling for all auto repairs. Call +254 712 135257. Serving Ruiru & Kasarani.',
     keywords: 'book car service Thika Road, car appointment Ruiru, schedule auto repair Kasarani',
     canonical: '/booking'
   },
@@ -117,7 +117,7 @@ export const PAGE_SEO = {
   },
   contact: {
     title: 'Contact MileMaster Auto Care — Garage on Thika Road, Nairobi',
-    description: 'Contact MileMaster Auto Care on Thika Road, Nairobi. Call +254 721 421996 or visit us. Open Mon-Fri 7am-6pm, Sat 8am-4pm. Serving Ruiru, Kasarani & beyond.',
+    description: 'Contact MileMaster Auto Care on Thika Road, Nairobi. Call +254 712 135257 or visit us. Open Mon-Fri 7am-6pm, Sat 8am-4pm. Serving Ruiru, Kasarani & beyond.',
     keywords: 'contact garage Thika Road, MileMaster directions, car repair Ruiru, mechanic Kasarani',
     canonical: '/contact'
   },

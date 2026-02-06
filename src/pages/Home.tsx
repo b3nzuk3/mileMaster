@@ -382,7 +382,7 @@ const Home = () => {
               className="text-lg px-8 py-4 border-background text-background hover:bg-background hover:text-foreground"
             >
               <Phone className="mr-2 h-5 w-5" />
-              Call Us: +254 721 421996
+              Call Us: +254 712 135257
             </Button>
           </div>
         </div>
